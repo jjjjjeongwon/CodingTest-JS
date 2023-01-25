@@ -22,3 +22,6 @@ function solution(strings, n) {
    
     return answer;
 }
+
+
+//sort의 개념을 활용해서 양수인지 음수인지 판단하고 자리가 바뀌는지/아닌지로도 풀 수 있음
