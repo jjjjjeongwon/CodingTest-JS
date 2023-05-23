@@ -16,6 +16,7 @@
 //     }
 //     return answer;
 // }
+console.log(solution('banana'));
 
 function solution(s) {
   const answer = Array.from({ length: s.length }, () => -1);
