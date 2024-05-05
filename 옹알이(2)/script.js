@@ -1,22 +1,17 @@
-function solution(babbling) {
-  const can = ["aya", "ye", "woo", "ma"];
-  let count = 0;
-
-  for (let i = 0; i < babbling.length; i++) {
-    let babble = babbling[i];
-
-    for (let j = 0; j < can.length; j++) {
-      if (babble.includes(can[j].repeat(2))) {
-        break;
+function solution(nums) {
+  var answer = 0,
+    number = 0;
+  for (var i = 0; i < nums.length - 2; i++) {
+    for (var j = i + 1; j < nums.length - 1; j++) {
+      for (var l = j + 1; l < nums.length; l++) {
+        number = nums[i] + nums[j] + nums[l];
+        var count = 0;
+        for (var k = 1; k <= number; k++) {
+          if (number % k == 0) count++;
+        }
+        if (count == 2) answer++;
       }
-
-      babble = babble.split(can[j]).join(" ");
-    }
-
-    if (babble.split(" ").join("").length === 0) {
-      count += 1;
     }
   }
-
-  return count;
+  return answer;
 }
